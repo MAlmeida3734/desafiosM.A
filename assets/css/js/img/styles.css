@@ -1,5 +1,13 @@
-.caixa {
-            background: red;
-            height: 120px;
-            width: 120px;
-        }
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div{
+    color: initial;
+    margin-left: 20px;
+}
+.pai > .filha {
+    font-style: italic;
+    color: red;
+}
