@@ -1,13 +1,54 @@
-* {
-    margin: 0;
-    padding: 0;
+.heading {
+    transition: all 1s ease-in-out;
 }
 
-div{
-    color: initial;
-    margin-left: 20px;
+.heading:hover {
+    background: red;
 }
-.pai > .filha {
-    font-style: italic;
-    color: red;
+
+a {
+    color: darkgoldenrod;
+}
+
+a:link {
+    color: darkmagenta;
+}
+
+a:visited {
+    color: aqua;
+}
+
+a:hover {
+    background: darkblue;
+    color: white;
+    text-decoration: none;
+}
+
+a:active {
+    background: darkgreen;
+    color: white;
+    text-decoration: none;
+}
+
+input:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    outline: none;
+    border: 1 px solid black;
+}
+
+input:disabled {
+    background: darkred;
+    cursor: not-allowed;
+}
+
+input:checked  + p{
+   background: red;
+}
+
+.pai .lista li:{
+    background: red;
+}
+
+input:required{
+    background: blue;
 }
