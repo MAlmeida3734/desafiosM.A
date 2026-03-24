@@ -16,7 +16,7 @@ style   ID    Classes, atributos e pseudo-classes  Elementos e pseudo-elementos
  !important ******
  */
 
-
+/* 
 #p {
     background: red;
 }
@@ -39,4 +39,22 @@ body#b p#p.p {
 
 body#b.bclass p#p.p {
     background: orange;
-}
+} */
+/* 
+.texto {
+    box-sizing: border-box;
+    background: red;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 500px;
+    min-width: 0;               Aprendendo sobre
+    min-height: 100px;          formatação no CSS
+    overflow-y: auto;
+    margin: 0 auto 50px auto;
+    padding: 10px 5px;
+    border: 5px solid black;
+    border-width: 5px;
+    border-style: solid;
+    border-color: aquamarine;
+} */
