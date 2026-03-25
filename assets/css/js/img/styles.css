@@ -58,30 +58,36 @@ body#b.bclass p#p.p {
     border-style: solid;
     border-color: aquamarine;
 } */
-html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-}
+
+
+
+/* p {
+    font-size: 20px;
+    /* font-style: italic;
+    font-weight: bold;
+    direction: ltr;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    line-height: 25px; */
+/* text-decoration: underline; */
+/* text-indent: 50px; */
+/* text-align: left; */
+/* text-shadow: 1px -1px 1px red; */
+/* text-transform: capitalize; */
+/* } */
 
 * {
     margin: 0;
     padding: 0;
 }
 
-
-.pai>div {
-    width: 50%;
-    height: 50rem;
-    background: blue;
+ul {
+    height: 100px;
+    overflow-y: auto;
 }
 
-.pai {
-    width: 50rem;
-    height: 100vh;
-    background: yellow;
-    overflow: hidden;
-}
-
-.p {
-    font-size: 2vmax;
+ul li.sticky {
+    position: sticky;
+    background: gray;
+    top: 0;
 }
