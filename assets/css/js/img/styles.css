@@ -75,12 +75,7 @@ body#b.bclass p#p.p {
 /* text-shadow: 1px -1px 1px red; */
 /* text-transform: capitalize; */
 /* } */
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
+/* 
 ul {
     height: 100px;
     overflow-y: auto;
@@ -90,4 +85,72 @@ ul li.sticky {
     position: sticky;
     background: gray;
     top: 0;
+    } */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid {
+    max-width: 1200px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.grid::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.grid .col {
+    height: 300px;
+    float: left;
+    padding: 15px;
+}
+
+.grid .col-content {
+    width: 100%;
+    height: 100%;
+    background: red;
+}
+
+.menu {
+    width: 100%;
+    position: fixed;
+    background: black;
+}
+
+.menu .ul {
+    list-style: none;
+    display: block;
+    max-width: 1200px;
+}
+
+
+@media all and (max-width: 568px) {
+    .grid .col {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 569px) and (max-width: 769px) {
+    .grid .col {
+        width: 50%;
+    }
+}
+
+@media all and (min-width: 769px) and (max-width: 1200px) {
+    .grid .col {
+        width: 33.3%;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    .grid .col {
+        width: 25%;
+    }
 }
