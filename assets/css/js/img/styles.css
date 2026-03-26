@@ -94,6 +94,21 @@ ul li.sticky {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    background-color: rgb(52, 83, 56);
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.grid {
+    max-width: 1200px;
+    padding: 15px;
+    margin: 0 auto;
+    padding-top: 73px;
+}
 
 .grid::after {
     content: '';
@@ -110,13 +125,19 @@ ul li.sticky {
 .grid .col-content {
     width: 100%;
     height: 100%;
-    background: red;
+    background: rgb(153, 255, 0); 
+    border-radius: 150px 150px 150px 0;
+    border-style: solid;
+    border-color: #fff;
+    border-width: 10px;
+    box-shadow: inset 0  0 15px 0 black,
+    5px 5px 5px 5px rgb(93, 90, 90)
 }
 
 .menu {
     width: 100%;
     position: fixed;
-    background: black;
+    background: rgba(110, 108, 108, 0.849)
 }
 
 .menu ul {
@@ -130,6 +151,35 @@ ul li.sticky {
 .menu ul li {
     float: left;
 }
+
+.menu ul li a {
+    display: block;
+    color: #fff;
+    padding: 20px;
+    text-decoration: none;
+    transition: all 600ms ease-in-out;
+}
+
+.menu ul li a:hover {
+    background: rgba(0, 255, 155, 0.3);
+
+}
+
+.full-page {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 73px;
+    height: 100vh;
+    background-color: aqua;
+}
+
+.full-page-content {
+    padding: 0 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
 
 @media all and (max-width: 568px) {
     .grid .col {
