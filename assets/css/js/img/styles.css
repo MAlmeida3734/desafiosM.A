@@ -94,11 +94,6 @@ ul li.sticky {
     box-sizing: border-box;
 }
 
-.grid {
-    max-width: 1200px;
-    padding: 15px;
-    margin: 0 auto;
-}
 
 .grid::after {
     content: '';
@@ -124,12 +119,17 @@ ul li.sticky {
     background: black;
 }
 
-.menu .ul {
+.menu ul {
     list-style: none;
     display: block;
     max-width: 1200px;
+    padding: 0 30px;
+    margin: 0 auto;
 }
 
+.menu ul li {
+    float: left;
+}
 
 @media all and (max-width: 568px) {
     .grid .col {
