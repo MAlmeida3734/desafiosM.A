@@ -179,6 +179,7 @@ ul li.sticky {
         @media all and (max-width: 568px) {
             .grid .col {
                 width: 100%;
+            
                 }
                 }
                 
@@ -199,6 +200,31 @@ ul li.sticky {
                 width: 25%;
                 }
                 } */
+
+/* .grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+                    margin-right: -30px;
+                    }
+                    
+                    
+                    
+.grid div {
+    background-color: aqua;
+    min-height: 100px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    }
+    
+    .grid div:nth-child(5) {
+        background: darkblue;
+        /* grid-column: span 3; */
+/* grid-column-start: um;
+        grid-column-end: quatro; */
+/* grid-column: span 2 / span 2 ;
+        grid-row: um / quatro; */
+/* grid-area: um / um / quatro / 3; */
+/* }  */
 * {
     margin: 0;
     padding: 0;
@@ -210,22 +236,48 @@ body {
     font-size: 40px;
 }
 
-.grid {
+.container {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns:
-        [um] 1fr [dois] 1fr [tres] 1fr [quatro];
-    gap: 30px;
 }
 
-.grid div {
-    background-color: aqua;
-    min-height: 100px;
+
+.grid div:nth-child(1) {
+    grid-area: header;
+    background: violet;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.grid div:nth-child(5) {
+
+.grid div:nth-child(2) {
+    grid-area: nav;
+    background: firebrick;
+}
+
+
+.grid div:nth-child(3) {
+    grid-area: main;
     background: darkblue;
-    grid-column-start: um;
-    grid-column-end: quatro;
+}
+
+
+.grid div:nth-child(4) {
+    grid-area: rodapé;
+    background: springgreen;
+}
+
+@media (max-width: 768px) {
+
+    .grid {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: auto;
+        grid-template-areas: 'header'
+            'nav'
+            ' main'
+            'rodapé';
+
+    }
 }
