@@ -1,5 +1,7 @@
 :root {
-    --primary-color: #066C45 --second-color: white
+    --primary-color: #066c45;
+    --second-color: #FFFFFF;
+    --light-gray-color: #EEEEEE
 }
 
 
@@ -18,7 +20,8 @@ html {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.6rem;
+    font-size: 2rem;
+    color: var(--primary-color);
 }
 
 h1 {
@@ -28,12 +31,12 @@ h1 {
 
 h2 {
     font-size: 5.5rem;
-    
+
 }
 
 h3 {
     font-size: 5rem;
-    
+
 }
 
 h4 {
@@ -43,12 +46,16 @@ h4 {
 
 h5 {
     font-size: 4rem;
-    
+
 }
 
 h6 {
     font-size: 3.5rem;
-    
+
+}
+
+a {
+    text-decoration: none;
 }
 
 .image {
@@ -57,10 +64,64 @@ h6 {
     background-position: center center;
     color: var(--second-color);
     background-color: #066C45
+}
 
+.white-bg {
+    background: var(--second-color);
 }
 
 .main-content {
     max-width: 1200px;
     margin: 0 auto;
+    padding: var(--gap);
+}
+
+.section {
+    min-height: 100vh;
+}
+
+.menu {
+    background: var(--second-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--light-gray-color);
+
+}
+
+.menu-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.menu h1 {
+    font-size: 2.3rem;
+    color: var(--primary-color);
+}
+
+.menu h1 a {
+    color: inherit;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+
+}
+
+.menu ul li a {
+    display: block;
+    padding: 2rem;
+    font-size: 1.8rem;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-color);
+}
+
+.menu ul li a {
+    border: o.2rem solid crimson;
 }
