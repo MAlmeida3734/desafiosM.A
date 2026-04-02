@@ -26,9 +26,8 @@ font-family: 'Open Sans' , sans-serif; */
 
 .section {
     min-height: 100vh;
-    padding: var(--gap);
 }
 
 .menu-spacing {
-    height: 6.5rem;
+    height: 65px;
 }

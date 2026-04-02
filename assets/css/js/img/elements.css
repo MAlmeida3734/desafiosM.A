@@ -17,12 +17,19 @@ h1 {
 }
 
 h2 {
-    font-size: 5.5rem;
+
+    color: aliceblue;
+    font-size: 4.5rem;
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    line-height: 1.2;
 }
 
 
+
 h3 {
-    font-size: 5rem;
+    font-size: 4.5rem;
+    text-transform: uppercase;
 
 }
 
