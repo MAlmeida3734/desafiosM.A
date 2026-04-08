@@ -14,9 +14,12 @@ font-family: 'Open Sans' , sans-serif; */
     background-color: var(--primary-color);
 }
 
-.white-bg {
+.white-bg div h2 {
     background: var(--second-color);
+    color: var(--primary-color);
+    min-height: 100vh;
 }
+
 
 .main-content {
     max-width: 120rem;
@@ -30,4 +33,18 @@ font-family: 'Open Sans' , sans-serif; */
 
 .menu-spacing {
     height: 65px;
+}
+
+.info-content div h2 p{
+    background: var(--second-color);
+    max-width: 64rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.info-content p {
+    color: var(--primary-color);
 }
