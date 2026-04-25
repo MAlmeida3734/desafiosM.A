@@ -4,9 +4,9 @@ body {
     justify-content: center;
     padding: 50px;
     background-image: url('assets/rastreador-backgroud.svg');
-    background-repeat: no-repeat;       
-    background-size: cover;             
-    background-position: center;        
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
 }
 
@@ -15,9 +15,9 @@ body {
     padding: 0.2rem;
     border: 3px solid rgba(0, 45, 74, 0.6);
     background: rgba(244, 235, 235, 0.8);
-    border-style:solid;
+    border-style: solid;
     border-radius: 15px;
-   
+
 }
 
 input {
@@ -41,3 +41,29 @@ button:hover {
     background-color: #002d4a;
 }
 
+#historicoSection {
+    margin-top: 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+#listaHistorico {
+    list-style: none;
+    padding: 0;
+}
+
+#listaHistorico li {
+    display: flex;
+    justify-content: space-between;
+    background: #f9f9f9;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+#listaHistorico button {
+    background: #ff4d4d;
+    padding: 2px 8px;
+    font-size: 0.8em;
+}

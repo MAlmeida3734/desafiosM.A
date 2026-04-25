@@ -1,21 +1,31 @@
 <!doctype html>
 <html lang="pt-BR">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link  rel="stylesheet" href="src/style.css">
-  <title>rastreador-ma</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>rastreador-ma</title>
+  </head>
+  
+  <body>
+    <div id="texto">
+      <h3>Rastrear Encomenda</h3>
+      <input type="text" id="codigoRastreio" placeholder="Ex: PO123456789BR">
+      <button onclick="rastrear()">Rastrear</button>
 
-<body>
-  <div id="texto">
-    <h3>Rastrear Encomenda</h3>
-    <input type="text" id="codigoRastreio" placeholder="Ex: PO123456789BR">
-    <button onclick="rastrear()">Rastrear</button>
-  </div>
-
-  <script src="src/search.js"></script>
+      <div id="historicoSection">
+        <h4>Últimas buscas:</h4>
+        <ul id="listaHistorico"></ul>
+    </div>
+    </div>
+    
+    
+    <div>
+      <span class="info"> </span>
+    </div>
+    <script src="src/search.js"></script>
 </body>
 
 </html>
