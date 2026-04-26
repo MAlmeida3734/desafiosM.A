@@ -107,19 +107,35 @@ button:hover {
 @keyframes suave {
     from {
         opacity: 0;
-        transform: translateY(30px); 
+        transform: translateY(30px);
     }
+
     to {
         opacity: 1;
-        transform: translateY(0);   
-}}
+        transform: translateY(0);
+    }
+}
 
 @keyframes tremer {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .classe-erro {
@@ -128,9 +144,12 @@ button:hover {
 }
 
 @media screen and (max-width: 768px) {
-  .background {
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+    .body {
+        background-image: url(assets/trajeto.svg);
+        background-size: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 100vh;
+    }
 }
