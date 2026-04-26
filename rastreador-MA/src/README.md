@@ -2,7 +2,7 @@
 
 Um rastreador de encomendas leve e moderno, desenvolvido com HTML, CSS e JavaScript puro. O sistema valida o padrão de rastreio dos Correios e armazena o histórico de buscas localmente no navegador.
 
-![rastreador-MA](Screenshot_20260425_032007.png)
+![rastreador-MA](rastreador-MA/src/assets/Screenshot_20260425_215557.png)
 
 ## 🚀 Funcionalidades
 

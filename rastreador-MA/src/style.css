@@ -3,7 +3,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 50px;
-    background-image: url('assets/rastreador-background.svg');
+    background-image: url('assets/trajeto.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -39,6 +39,8 @@ button {
 
 button:hover {
     background-color: #002d4a;
+    transform: scale(1.05);
+    transition: all 0.2s ease;
 }
 
 #historicoSection {
@@ -87,19 +89,40 @@ button:hover {
 }
 
 .encomenda-bottom {
-    margin-top: 30px; 
+    margin-top: 30px;
     display: flex;
     justify-content: center;
+    bottom: 0;
+    z-index: -1;
+    animation: suave 1s ease-out 0.3s backwards;
 }
 
 .encomenda-bottom img {
-    width: 100%;       
-    max-width: 2000px; 
-    height: auto;    
-    opacity: 0.8;     
+    width: 100%;
+    max-width: 2000px;
+    height: auto;
+    opacity: 0.8;
 }
 
-.encomenda-bottom {
-    bottom: 0;
-    z-index: -1;
+@keyframes suave {
+    from {
+        opacity: 0;
+        transform: translateY(30px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);   
+}}
+
+@keyframes tremer {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.classe-erro {
+    border: 2px solid #ff4d4d !important;
+    animation: tremer 0.3s linear;
 }

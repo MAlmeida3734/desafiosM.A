@@ -9,7 +9,12 @@ function rastrear() {
         return;
     }
 
+    codigoInput.classList.remove('classe-erro');
+
     if (!formatoCorreios.test(codigo)) {
+
+        codigoInput.classList.add('classe-erro');
+
         Swal.fire({
             title: 'Formato Inválido',
             text: 'O código deve seguir o padrão: 2 letras, 9 números e 2 letras (Ex: AA123456789BR)',
@@ -34,7 +39,11 @@ function rastrear() {
         return;
     }
 
+
     if (codigo.length !== 13) {
+        void codigoInput.offsetWidth;
+
+
         Swal.fire({
             title: 'Código Inválido',
             text: 'Um código padrão tem 13 caracteres (Ex: AA123456789BR).',
