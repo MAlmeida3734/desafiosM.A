@@ -10,6 +10,7 @@ function salvarNoHistorico(codigo) {
 }
 
 function exibirHistorico() {
+    const el = (id) => document.getElementById(id);
     const getHistorico = () => JSON.parse(localStorage.getItem('rastreios')) || [];
     const historico = getHistorico();
     const lista = el('listaHistorico').innerHTML = historico.map(cod => `
