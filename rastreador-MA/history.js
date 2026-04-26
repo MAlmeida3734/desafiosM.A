@@ -1,5 +1,6 @@
 function salvarNoHistorico(codigo) {
-    let historico = JSON.parse(localStorage.getItem('rastreios')) || [];
+    const getHistorico = () => JSON.parse(localStorage.getItem('rastreios')) || [];
+    const el = (id) => document.getElementById(id);
 
     if (!historico.includes(codigo)) {
         historico.push(codigo);
@@ -8,24 +9,11 @@ function salvarNoHistorico(codigo) {
 }
 
 function exibirHistorico() {
-    const lista = document.getElementById('listaHistorico');
-    const secao = document.getElementById('historicoSection');
-    let historico = JSON.parse(localStorage.getItem('rastreios')) || [];
-
-    if (historico.length > 0) {
-        secao.style.display = 'block';
-        lista.innerHTML = historico.map(cod => `
-            <li>
-                <span>${cod}</span>
-                <button onclick="removerItem('${cod}')">x</button>
-            </li>
-        `).join('');
-
-    } else {
-        secao.style.display = 'none';
-    }
-
-
+    const historico = getHistorico();
+    const lista = el('listaHistorico').innerHTML = historico.map(cod => `
+        <li>${cod} <button onclick="removerItem('${cod}')">x</button></li>
+    `).join('');
+    const secao = el('historicoSection').style.display = historico.length ? 'block' : 'none';
 }
 
 function limparHistoricoTodo() {

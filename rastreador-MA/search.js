@@ -1,6 +1,6 @@
 function rastrear() {
-    const codigoInput = document.getElementById('codigoRastreio');
-    const codigo = codigoInput.value.trim().toUpperCase();
+    const input = el('codigoRastreio');
+    const codigo = input.value.trim().toUpperCase();
 
     const formatoCorreios = /^[A-Z]{2}[0-9]{9}[A-Z]{2}$/;
 
@@ -9,12 +9,10 @@ function rastrear() {
         return;
     }
 
-    codigoInput.classList.remove('classe-erro');
 
+    input.classList.remove('classe-erro');
     if (!formatoCorreios.test(codigo)) {
-
-        codigoInput.classList.add('classe-erro');
-
+        input.classList.add('classe-erro');
         Swal.fire({
             title: 'Formato Inválido',
             text: 'O código deve seguir o padrão: 2 letras, 9 números e 2 letras (Ex: AA123456789BR)',
@@ -23,6 +21,8 @@ function rastrear() {
         });
         return;
     }
+
+
 
 
     if (codigo === "") {
@@ -41,9 +41,7 @@ function rastrear() {
 
 
     if (codigo.length !== 13) {
-        void codigoInput.offsetWidth;
-
-
+        void input.offsetWidth;
         Swal.fire({
             title: 'Código Inválido',
             text: 'Um código padrão tem 13 caracteres (Ex: AA123456789BR).',
@@ -53,14 +51,16 @@ function rastrear() {
         return;
     }
 
+
+
     salvarNoHistorico(codigo);
     const url = `https://correios.com.br{codigo}`;
     window.open(url, '_blank');
 
-    codigoInput.value = "";
+    input.value = "";
     exibirHistorico();
 }
 
-document.getElementById('codigoRastreio').addEventListener('keypress', (e) => {
+el('codigoRastreio').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') rastrear();
 });
