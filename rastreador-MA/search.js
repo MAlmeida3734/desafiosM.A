@@ -1,7 +1,7 @@
 function rastrear() {
+    const el = (id) => document.getElementById(id);
     const input = el('codigoRastreio');
     const codigo = input.value.trim().toUpperCase();
-    const el = (id) => document.getElementById(id);
 
     const formatoCorreios = /^[A-Z]{2}[0-9]{9}[A-Z]{2}$/;
 
@@ -60,8 +60,9 @@ function rastrear() {
 
     input.value = "";
     exibirHistorico();
+
+    el('codigoRastreio').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') rastrear();
+    });
 }
 
-el('codigoRastreio').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') rastrear();
-});
