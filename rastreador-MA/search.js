@@ -1,6 +1,7 @@
 function rastrear() {
     const input = el('codigoRastreio');
     const codigo = input.value.trim().toUpperCase();
+    const el = (id) => document.getElementById(id);
 
     const formatoCorreios = /^[A-Z]{2}[0-9]{9}[A-Z]{2}$/;
 
