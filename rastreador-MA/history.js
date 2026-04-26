@@ -2,7 +2,7 @@ function salvarNoHistorico(codigo) {
     const getHistorico = () => JSON.parse(localStorage.getItem('rastreios')) || [];
     const el = (id) => document.getElementById(id);
 
-    if (!historico.includes(codigo)) {
+    if (historico.includes(codigo)) {
         historico.push(codigo);
         localStorage.setItem('rastreios', JSON.stringify(historico));
     }
