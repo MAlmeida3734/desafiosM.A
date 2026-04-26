@@ -1,73 +1,40 @@
-# React + TypeScript + Vite
+# 📦 Rastreador de Encomendas Simples
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um rastreador de encomendas leve e moderno, desenvolvido com HTML, CSS e JavaScript puro. O sistema valida o padrão de rastreio dos Correios e armazena o histórico de buscas localmente no navegador.
 
-Currently, two official plugins are available:
+![rastreador-MA](rastreador-MA/src/assets/Screenshot_20260425_215557.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Funcionalidades
 
-## React Compiler
+- **Validação de Código:** Utiliza RegEx para garantir o formato oficial (2 letras, 9 números, 2 letras).
+- **Histórico Local:** Salva automaticamente seus últimos rastreios usando `localStorage`.
+- **Alertas Modernos:** Interface amigável utilizando a biblioteca SweetAlert2.
+- **Interface Responsiva:** Design limpo com fundo SVG e suporte à tecla "Enter" para busca.
+- **Gerenciamento de Histórico:** Opção para remover itens individuais ou limpar todo o histórico.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+- [HTML5](https://mozilla.org)
+- [CSS3](https://mozilla.org) (com Backgrounds SVG)
+- [JavaScript (ES6+)](https://mozilla.org)
+- [SweetAlert2](https://github.io) (Para pop-ups personalizados)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📂 Estrutura do Projeto
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+├── index.html      # Estrutura principal
+├── style.css       # Estilização e design
+├── script.js       # Lógica do sistema e integração com localStorage
+└── fundo.svg       # Elemento visual de fundo
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔧 Como usar
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Clone ou baixe os arquivos do projeto.
+2. Abra o arquivo `index.html` em qualquer navegador moderno.
+3. Digite um código de rastreio válido (Ex: `AA123456789BR`).
+4. Clique em "Buscar" ou pressione a tecla **Enter**.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📝 Licença
+
+Este projeto é para fins de estudo e prática. Sinta-se à vontade para usar e melhorar!
