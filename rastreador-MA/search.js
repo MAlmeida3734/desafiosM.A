@@ -53,13 +53,6 @@ function rastrear() {
         return;
     }
 
-
-    document.getElementById('codigoRastreio').addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-            rastrear();
-        }
-    })
-
     salvarNoHistorico(codigo);
     const url = `https://correios.com.br{codigo}`;
     window.open(url, '_blank');
