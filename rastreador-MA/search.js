@@ -60,9 +60,9 @@ function rastrear() {
 
     input.value = "";
     exibirHistorico();
-
-    el('codigoRastreio').addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') rastrear();
-    });
+    
 }
+el('codigoRastreio').addEventListener('keypress', (e) => {
+if (e.key === 'Enter') rastrear();
+});
 
