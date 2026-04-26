@@ -5,7 +5,7 @@ body {
     padding: 50px;
     background-image: url('assets/trajeto.svg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
     background-position: center;
     background-attachment: fixed;
 }
@@ -125,4 +125,12 @@ button:hover {
 .classe-erro {
     border: 2px solid #ff4d4d !important;
     animation: tremer 0.3s linear;
+}
+
+@media screen and (max-width: 768px) {
+  .background {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
