@@ -66,3 +66,4 @@ el('codigoRastreio').addEventListener('keypress', (e) => {
 if (e.key === 'Enter') rastrear();
 });
 
+const el = (id) => document.getElementById(id);
