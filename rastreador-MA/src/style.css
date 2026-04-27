@@ -5,11 +5,9 @@ body {
     padding: 50px;
     background-image: url('assets/trajeto.svg');
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    width: 100%;
-    overflow-x: hidden;
 }
 
 #texto {
