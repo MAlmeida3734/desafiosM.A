@@ -1,12 +1,17 @@
 <template>
     <div id="app">
         <MaComponents 
-       />
-       <div v-for="(obj, index) in todos"
-       :key="obj.id"
-       class="todos-item"
-       >
-       
+        />
+        <h1 :class="{ 'title': true, 'title-home': isHome }"> Sempre em Desenvolvivemnto!!! </h1>
+
+        <p :class="pClass"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut excepturi totam illum iste molestiae, nam illo, cumque maiores repellat debitis magnam nesciunt velit perferendis soluta laborum quia. Harum, minus sint?</p>
+        
+        <p :style= "styleClass"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus a nisi sunt quas, et beatae atque doloremque ut, aperiam explicabo voluptas inventore. Dolorum enim aperiam ratione tempore necessitatibus dolore molestiae.</p>
+        <div v-for="(obj, index) in todos"
+        :key="obj.id"
+        class="todos-item"
+        >
+        
        {{ index}} - {{ obj.title }}
 
     </div>
@@ -33,6 +38,10 @@ export default {
     },
     data(){
         return{ 
+            isHome: false, 
+            classVar:'title',
+            pClass: [ 'text-home','text' ], 
+            styleClass: { color: 'aqua', backgroundColor: 'black', 'font-size': '30px'},
             todos: [
                 {
                     "userId": 1,
@@ -72,6 +81,20 @@ export default {
 </script>
 
 <style>
+.title-home {
+    font-size: 40px;
+    color: aquamarine;
+}
+.title{
+font-size: 20px;
+color: #fff;
+}
+.text{
+    color: aqua;
+}
+.text-home{
+font-size: 25px;
+}
 .todos-item{
     margin: 0 0 5px 0;
     padding: 3px 6px;
