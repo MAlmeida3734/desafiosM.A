@@ -1,22 +1,23 @@
 <template>
     <div id="app">
         <MaComponents 
-        v-if="showMA"/>
+       />
+       <div v-for="(obj, index) in todos"
+       :key="obj.id"
+       class="todos-item"
+       >
+       
+       {{ index}} - {{ obj.title }}
 
-        <div v-show="showName">
-            Nome: {{ firstName }} <br>
-            Sobrenome: {{ lastName }}
-        </div>
-
-        <div v-if="acessLevel === 'admin'">Admin</div>
-        <div v-else-if="acessLevel === 'marketing'">Marketing</div>
-        <div v-else>User</div>
     </div>
-<br>
-<br>
+
+    <br>
+    <br>
+    
     <img
-    alt="Vue logo"
+    :alt="Vuelogo"
     src="./assets/logo.png"/>
+</div>
 
 </template>
 
@@ -31,21 +32,55 @@ export default {
         MaComponents
     },
     data(){
-        return{
-        showMA: true,
-        firstName: 'Marco',
-        lastName: 'Almeida',
-        showName: false,
-        acessLevel: 'admin'
-        }
+        return{ 
+            todos: [
+                {
+                    "userId": 1,
+                    "id": 1,
+                    "title": "delectus aut autem",
+                    "completed": false,
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "quis ut nam facilis et officia qui",
+    "completed": false,
+
+  },
+  {
+    "userId": 1,
+    "id": 3,
+    "title": "fugiat veniam minus",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 4,
+    "title": "et porro tempora",
+    "completed": true
+  },
+  {
+    "userId": 1,
+    "id": 5,
+    "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
+    "completed": false
+  }, ]
+                
+            
+        }}
     }
-}
 </script>
 
 <style>
+.todos-item{
+    margin: 0 0 5px 0;
+    padding: 3px 6px;
+    color: #fff;
+}
 #app{
-    text-align: center;
-    background-color:rgb(72, 122, 59); 
+    margin: 60px;
+    background-color:rgb(72, 122, 59);
+    text-align: center; 
 };
 
 

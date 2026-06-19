@@ -13,7 +13,7 @@
    
    <style scoped>
     h1 {
-      color: blue;
+      color: rgb(25, 25, 31);
       text-align: center;
     }
   </style>
