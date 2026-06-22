@@ -7,18 +7,71 @@
         <p :class="pClass"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut excepturi totam illum iste molestiae, nam illo, cumque maiores repellat debitis magnam nesciunt velit perferendis soluta laborum quia. Harum, minus sint?</p>
         
         <p :style= "styleClass"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus a nisi sunt quas, et beatae atque doloremque ut, aperiam explicabo voluptas inventore. Dolorum enim aperiam ratione tempore necessitatibus dolore molestiae.</p>
+        
         <div v-for="(obj, index) in todos"
         :key="obj.id"
         class="todos-item"
         >
         
        {{ index}} - {{ obj.title }}
-
     </div>
+       
+    <div>
+
+        <label>NewsLetter</label> <br>
+
+       <input
+       v-model="newsletter"
+       type="radio"
+       value="Sim"
+       > Sim
+
+       <input
+       v-model="newsletter"
+       type="radio"
+       value="Não"
+       >Não <br>
+       {{ newsletter }}
+       
+</div>
 
     <br>
     <br>
-    
+
+    <div>
+
+        <label>Contratos</label> <br>
+
+       <input
+       v-model="contract"
+       type="checkbox"
+       >  Aceito os termos
+       {{ contract }}
+       
+</div>
+
+    <br>
+    <br>
+    <div>
+
+        <label>Cores</label> <br>
+
+       <input
+       v-model="colors"
+       type="checkbox"
+       value="Azul"
+       > Azul
+
+       <input
+       v-model="colors"
+       type="checkbox"
+       value="Amarelo"
+       >Amarelo <br>
+       {{ colors }}
+       
+</div>
+
+ 
     <img
     :alt="Vuelogo"
     src="./assets/logo.png"/>
@@ -42,40 +95,9 @@ export default {
             classVar:'title',
             pClass: [ 'text-home','text' ], 
             styleClass: { color: 'aqua', backgroundColor: 'black', 'font-size': '30px'},
-            todos: [
-                {
-                    "userId": 1,
-                    "id": 1,
-                    "title": "delectus aut autem",
-                    "completed": false,
-  },
-  {
-    "userId": 1,
-    "id": 2,
-    "title": "quis ut nam facilis et officia qui",
-    "completed": false,
-
-  },
-  {
-    "userId": 1,
-    "id": 3,
-    "title": "fugiat veniam minus",
-    "completed": false
-  },
-  {
-    "userId": 1,
-    "id": 4,
-    "title": "et porro tempora",
-    "completed": true
-  },
-  {
-    "userId": 1,
-    "id": 5,
-    "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
-    "completed": false
-  }, ]
-                
-            
+            newsletter: '',
+            contract: false,
+            colors: [],
         }}
     }
 </script>
