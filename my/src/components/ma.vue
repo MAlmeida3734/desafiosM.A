@@ -16,6 +16,7 @@
         </select>
         <h2> {{ esporte }}</h2>
       </div>
+      
     </template>
 
     <script>

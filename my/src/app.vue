@@ -10,10 +10,9 @@
         
         <div v-for="(obj, index) in todos"
         :key="obj.id"
-        class="todos-item"
         >
         
-       {{ index}} - {{ obj.title }}
+       {{ index}} - {{ obj.title }} 
     </div>
        
     <div>
@@ -34,46 +33,30 @@
        {{ newsletter }}
        
 </div>
-
-    <br>
-    <br>
-
-    <div>
-
-        <label>Contratos</label> <br>
-
-       <input
-       v-model="contract"
-       type="checkbox"
-       >  Aceito os termos
-       {{ contract }}
-       
+<div>
+    <button v-on:click="onClick()">
+        Enviar
+    </button>
+</div>
+<div @mouseover.once="onMouseOver()">
+    Mouse over
 </div>
 
-    <br>
-    <br>
-    <div>
+<br>
+<br>
 
-        <label>Cores</label> <br>
+<form action="https://google.com"
+    @submit.prevent="onSubmit">
 
-       <input
-       v-model="colors"
-       type="checkbox"
-       value="Azul"
-       > Azul
+    <button type="submit">
+        Enviar
+    </button>
+    
+</form>
 
-       <input
-       v-model="colors"
-       type="checkbox"
-       value="Amarelo"
-       >Amarelo <br>
-       {{ colors }}
-       
-</div>
 
  
     <img
-    :alt="Vuelogo"
     src="./assets/logo.png"/>
 </div>
 
@@ -81,6 +64,7 @@
 
 <script>
 import MaComponents from './components/ma.vue'
+
 
 
 
@@ -98,7 +82,18 @@ export default {
             newsletter: '',
             contract: false,
             colors: [],
-        }}
+        }},
+        methods:{
+            onClick() {
+                console.log('click');
+            },
+            onMouseOver() {
+                console.log(' mouse over')
+            },
+            onSubmit() {
+                console.log('submit')
+            }
+        }
     }
 </script>
 
@@ -117,11 +112,7 @@ color: #fff;
 .text-home{
 font-size: 25px;
 }
-.todos-item{
-    margin: 0 0 5px 0;
-    padding: 3px 6px;
-    color: #fff;
-}
+
 #app{
     margin: 60px;
     background-color:rgb(72, 122, 59);
