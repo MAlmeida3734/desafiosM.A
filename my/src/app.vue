@@ -1,65 +1,57 @@
 <template>
     <div id="app">
-        <MaComponents 
-        />
-        <h1 :class="{ 'title': true, 'title-home': isHome }"> Sempre em Desenvolvivemnto!!! </h1>
-
-        <p :class="pClass"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut excepturi totam illum iste molestiae, nam illo, cumque maiores repellat debitis magnam nesciunt velit perferendis soluta laborum quia. Harum, minus sint?</p>
+        <MaComponents/>
         
-        <p :style= "styleClass"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus a nisi sunt quas, et beatae atque doloremque ut, aperiam explicabo voluptas inventore. Dolorum enim aperiam ratione tempore necessitatibus dolore molestiae.</p>
         
-        <div v-for="(obj, index) in todos"
-        :key="obj.id"
-        >
-        
-       {{ index}} - {{ obj.title }} 
-    </div>
-       
+        <div>
+            
+            <label>NewsLetter</label> <br>
+            
+            <input
+            v-model="newsletter"
+            type="radio"
+            value="Sim"
+            > Sim
+            
+            <input
+            v-model="newsletter"
+            type="radio"
+            value="Não"
+            >Não <br>
+            {{ newsletter }}
+            
+        </div>
     <div>
-
-        <label>NewsLetter</label> <br>
-
-       <input
-       v-model="newsletter"
-       type="radio"
-       value="Sim"
-       > Sim
-
-       <input
-       v-model="newsletter"
-       type="radio"
-       value="Não"
-       >Não <br>
-       {{ newsletter }}
-       
-</div>
-<div>
-    <button v-on:click="onClick()">
-        Enviar
-    </button>
-</div>
-<div @mouseover.once="onMouseOver()">
-    Mouse over
-</div>
-
-<br>
-<br>
-
-<form action="https://google.com"
+        <button v-on:click="onClick()">
+            Enviar
+        </button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <form action="https://google.com"
     @submit.prevent="onSubmit">
-
+    
     <button type="submit">
         Enviar
     </button>
     
 </form>
+<div>
+    
+    {{ fullName }}
+</div>
 
 
- 
+<div>
     <img
     src="./assets/logo.png"/>
 </div>
 
+
+</div>
 </template>
 
 <script>
@@ -68,27 +60,30 @@ import MaComponents from './components/ma.vue'
 
 
 
+
 export default {
-    name: 'App', 
+    name: 'App',
     components: {
         MaComponents
     },
     data(){
         return{ 
-            isHome: false, 
-            classVar:'title',
-            pClass: [ 'text-home','text' ], 
-            styleClass: { color: 'aqua', backgroundColor: 'black', 'font-size': '30px'},
+            user: { fisrt_name: 'Marco',
+            last_name:'Almeida',
+            },
             newsletter: '',
             contract: false,
             colors: [],
         }},
+        computed: {
+            fullName(){
+                return `${this.user.fisrt_name} ${this.user.last_name}`
+            },
+
+        },
         methods:{
             onClick() {
                 console.log('click');
-            },
-            onMouseOver() {
-                console.log(' mouse over')
             },
             onSubmit() {
                 console.log('submit')

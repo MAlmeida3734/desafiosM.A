@@ -12,18 +12,22 @@
           <option value="Futebol">Futebol</option>
           <option value="Basquete">Basquete</option>
           <option value="Natação">Natação</option>
-          <option value="Skate"></option>
+          <option value="Skate">Skate</option>
         </select>
         <h2> {{ esporte }}</h2>
       </div>
+
+
       
     </template>
 
     <script>
         export default {
-          name: 'MaComponents' ,
+          name: 'MaComponents',
         data: () => ({nome: 'Hello World!', esporte: ''})
-   }; </script>
+   }; 
+      
+   </script>
    
    <style scoped>
     h1 {
