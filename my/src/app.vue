@@ -1,18 +1,21 @@
 <template>
     <div id="app">
-        <MaComponents/>
-<div>
+        <MaComponents v-if="showMA"/>
     
-    {{ fullName }}
-</div>
+         <h1>Vamo Vamo</h1>
+            {{ name }} <br>
+            <button @click="toodleMA">
+                Ativar e desativar MA
+            </button>
 
-
+            <input 
+            v-model="name"
+            type="text">
+        
 <div>
     <img
     src="./assets/logo.png"/>
 </div>
-
-
 </div>
 </template>
 
@@ -30,32 +33,45 @@ export default {
     },
     data(){
         return{ 
-            user: { fisrt_name: 'Marco',
-            last_name:'Almeida',
-            },
-        }},
+            name:'Marco Almeida',
+            showMA: true,
+        }
+    }, 
+
+   //beforeCreate(){
+   // console.log('beforeCreate')
+   //},
+   //beforeUpdate(){
+   // console.log('beforeUpdate', this.name)
+   //},
+   //updated(){
+   // console.log('updated', this.name)
+   //},
+   //created(){
+   //     console.log('created');
+   //     console.log('Estado:',this.name);
+   //    console.log('DOM:', this.$el)
+   // },
+   // beforeMount(){
+   //     console.log('beforeMount');
+   //     console.log('Estado:',this.name);
+   //     console.log('DOM:', this.$el)
+   //},
+   // mounted(){
+   //     console.log('mounted');
+   //     console.log('Estado:',this.name);
+   //     console.log('DOM:', this.$el)
+   // },
+    
+    
 
         watch: {},
-        computed: {
-            fullName(){
-                return `${this.user.fisrt_name} ${this.user.last_name}`
-            },
-            uncompletedTodo() {
-                return this.todos.filter(todo => !todo.completed);
-            },
-            completedTodo(){
-                return this.todos.filter(todo => todo.completed);
-            },
-
-        },
+        computed: {},
         methods:{
-            onClick() {
-                console.log('click');
+            toodleMA(){
+                this.showMA = !this.showMA
             },
-            onSubmit() {
-                console.log('submit')
-            }
-        }
+        },
     }
 </script>
 

@@ -24,7 +24,23 @@
     <script>
         export default {
           name: 'MaComponents',
-        data: () => ({nome: 'Hello World!', esporte: ''})
+        data: () => ({nome: 'Hello World!', esporte: ''}),
+        mounted(){
+          window.addEventListener( 'resize', this.resize)
+        },
+        beforeUnmount(){
+        console.log('beforeUnmount');
+        window.removeEventListener('resize', this.resize)
+         },
+          unmounted(){
+        console.log('unmounted');
+        },
+
+        methods:{
+          resize($evt){
+            console.log($evt)
+          }
+        }
    }; 
       
    </script>
