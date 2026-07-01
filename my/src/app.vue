@@ -1,26 +1,25 @@
 <template>
-    <div id="app">
-        <MaComponents v-if="showMA"/>
-    
-         <h1>Vamo Vamo</h1>
-            {{ name }} <br>
-            <button @click="toodleMA">
-                Ativar e desativar MA
-            </button>
+    <div>
+        <maview>
+            <template v-slot:title>
+                Hello World!
+            </template>
 
-            <input 
-            v-model="name"
-            type="text">
-        
+            <template v-slot:description>
+                <p>Vamo Vamo</p>
+            </template>
+
+            O estudo é incrivel!!
+        </maview>
+    </div> 
 <div>
     <img
-    src="./assets/logo.png"/>
+    src="./assets/logo.png"/>       
 </div>
-</div>
-</template>
 
+</template>
 <script>
-import MaComponents from './components/ma.vue'
+import maview from './components/maView.vue';
 
 
 
@@ -29,12 +28,11 @@ import MaComponents from './components/ma.vue'
 export default {
     name: 'App',
     components: {
-        MaComponents
+        maview
     },
     data(){
         return{ 
-            name:'Marco Almeida',
-            showMA: true,
+    
         }
     }, 
 
@@ -59,6 +57,7 @@ export default {
    //},
    // mounted(){
    //     console.log('mounted');
+
    //     console.log('Estado:',this.name);
    //     console.log('DOM:', this.$el)
    // },
@@ -67,35 +66,16 @@ export default {
 
         watch: {},
         computed: {},
-        methods:{
-            toodleMA(){
-                this.showMA = !this.showMA
-            },
-        },
+        methods:{},
     }
 </script>
 
 <style>
-.title-home {
-    font-size: 40px;
-    color: aquamarine;
-}
-.title{
-font-size: 20px;
-color: #fff;
-}
-.text{
-    color: aqua;
-}
-.text-home{
-font-size: 25px;
-}
 
 #app{
     margin: 60px;
-    background-color:rgb(72, 122, 59);
+    background-color: black;
     text-align: center; 
 };
-
 
 </style>
