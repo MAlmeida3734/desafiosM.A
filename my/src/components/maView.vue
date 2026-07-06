@@ -33,9 +33,3 @@ class="title">
       
    </script>
    
-   <style>
-  .header{
-    background-color: black;
-    color: beige;
-  }
-  </style>

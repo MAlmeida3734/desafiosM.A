@@ -1,17 +1,19 @@
 <template>
     <div>
-        <maview>
-            <template v-slot:title>
-                Hello World!
-            </template>
-
-            <template v-slot:description>
-                <p>Vamo Vamo</p>
-            </template>
-
-            O estudo é incrivel!!
-        </maview>
+        <maview/>
     </div> 
+    <div>
+        <BaseCard/>
+    </div>
+    <br><br><br>
+    <div>
+        <BaseAlert :variant="variant">
+        
+        {{text}}
+    </BaseAlert>
+       
+    </div>
+    <br><br><br>
 <div>
     <img
     src="./assets/logo.png"/>       
@@ -19,6 +21,8 @@
 
 </template>
 <script>
+import BaseAlert from './components/BaseAlert.vue';
+import BaseCard from './components/BaseCard.vue';
 import maview from './components/maView.vue';
 
 
@@ -28,39 +32,35 @@ import maview from './components/maView.vue';
 export default {
     name: 'App',
     components: {
-        maview
+        maview,
+        BaseCard,
+        BaseAlert
     },
     data(){
         return{ 
+            variant:"success",
+            text:"Seu formulário foi enviado com sucesso!!"
     
         }
     }, 
 
-   //beforeCreate(){
-   // console.log('beforeCreate')
-   //},
-   //beforeUpdate(){
-   // console.log('beforeUpdate', this.name)
-   //},
-   //updated(){
-   // console.log('updated', this.name)
-   //},
-   //created(){
-   //     console.log('created');
-   //     console.log('Estado:',this.name);
-   //    console.log('DOM:', this.$el)
-   // },
-   // beforeMount(){
-   //     console.log('beforeMount');
-   //     console.log('Estado:',this.name);
-   //     console.log('DOM:', this.$el)
-   //},
-   // mounted(){
-   //     console.log('mounted');
-
-   //     console.log('Estado:',this.name);
-   //     console.log('DOM:', this.$el)
-   // },
+   beforeCreate(){
+   console.log('beforeCreate')
+   },
+   beforeUpdate(){
+    console.log('beforeUpdate')
+   },
+   updated(){
+    console.log('updated')
+   },
+   created(){
+        console.log('created');
+    },
+    beforeMount(){
+        console.log('beforeMount'); 
+    },
+    mounted(){
+        console.log('mounted');  },
     
     
 
@@ -74,7 +74,8 @@ export default {
 
 #app{
     margin: 60px;
-    background-color: black;
+    border-radius: 10px;
+    background-color: rgb(54, 54, 54);
     text-align: center; 
 };
 
